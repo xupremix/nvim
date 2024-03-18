@@ -7,6 +7,12 @@ vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
 vim.keymap.set("n", "<leader>fa", vim.lsp.buf.format)
+vim.keymap.set("n", "<leader>fa", vim.lsp.buf.format)
+vim.keymap.set("n", "<leader><", "<cmd>xa<cr><cmd>qa<cr>")
+
+-- Terminal keymaps
+vim.keymap.set("n", "tt", "<cmd>:term<cr>")
+vim.keymap.set("t", "<C-c>", [[<C-\><C-n>]])
 
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 vim.keymap.set("n", "<leader>X", vim.diagnostic.goto_prev, { desc = "Go to previous [D]iagnostic message" })
