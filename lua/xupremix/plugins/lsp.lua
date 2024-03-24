@@ -60,6 +60,26 @@ local lsp = {
 					},
 				},
 			},
+			rust_analyzer = {
+				settings = {
+					["rust-analyzer"] = {
+						checkOnSave = {
+							command = "clippy",
+						},
+						cargo = {
+							allFeatures = true,
+						},
+						procMacro = {
+							enable = true,
+						},
+						diagnostics = {
+							enable = true,
+							disabled = { "unresolved-proc-macro" },
+							enableExperimental = true,
+						},
+					},
+				},
+			},
 		}
 
 		require("mason").setup()
@@ -67,6 +87,7 @@ local lsp = {
 		local ensure_installed = vim.tbl_keys(servers or {})
 		vim.list_extend(ensure_installed, {
 			"stylua",
+			"rust-analyzer",
 		})
 		require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
