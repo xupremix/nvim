@@ -74,7 +74,7 @@ local lsp = {
 						},
 						diagnostics = {
 							enable = true,
-							disabled = { "unresolved-proc-macro" },
+							disabled = { "unresolved-proc-macro", "macro-error" },
 							enableExperimental = true,
 						},
 					},
@@ -99,6 +99,10 @@ local lsp = {
 					require("lspconfig")[server_name].setup(server)
 				end,
 			},
+		})
+
+		require("mason-lspconfig").setup_handlers({
+			["rust_analyzer"] = function() end,
 		})
 	end,
 }
