@@ -80,6 +80,16 @@ local lsp = {
 					},
 				},
 			},
+			clangd = {
+				settings = {
+					["clangd"] = {
+						compileCommands = {
+							"clangd",
+							"--fallback-style=webkit",
+						},
+					},
+				},
+			},
 		}
 
 		require("mason").setup()
@@ -88,6 +98,7 @@ local lsp = {
 		vim.list_extend(ensure_installed, {
 			"stylua",
 			"rust-analyzer",
+			"clangd",
 		})
 		require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 

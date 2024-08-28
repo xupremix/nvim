@@ -8,7 +8,7 @@ require("lazy").setup({
 })
 
 --	require("plugins.doc"),
-	--require("plugins.gui"),
-	--require("plugins.language"),
-	--require("plugins.navigation"),
-	--require("plugins.editing"),
+--require("plugins.gui"),
+--require("plugins.language"),
+--require("plugins.navigation"),
+--require("plugins.editing"),
